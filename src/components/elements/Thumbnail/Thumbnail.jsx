@@ -9,9 +9,8 @@ function Thumbnail({ discover, title }) {
 
     return (
         <ThumbnailStyled>
-            <img className="thumb-img" src={imageURL} alt={title} />
+            <img src={imageURL} alt={title} />
         </ThumbnailStyled>
-
     );
 }
 

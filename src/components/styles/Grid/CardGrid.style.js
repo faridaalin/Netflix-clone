@@ -1,10 +1,17 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 const CardGrid = styled.section`
-  ${({ theme }) => theme.mixins.flexHorizontal};
-  margin-top: 16px;
-  border: 2px solid red;
+  padding-top: 16px;
   overflow-y: hidden;
+  overflow-x: scroll;
+  width: 95vw;
+
+  .inner {
+    width: auto;
+    display: inline-flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
 `;
 
 export default CardGrid;

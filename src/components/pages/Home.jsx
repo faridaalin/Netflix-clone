@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import { useSelector } from "react-redux";
 import { fetchDiscoverData } from "../../redux/reduser/discoverReducer";
 
+
 function Home({ discover, fetchDiscoverData }) {
     useEffect(() => {
         fetchDiscoverData();
@@ -24,13 +25,17 @@ function Home({ discover, fetchDiscoverData }) {
                     <Herobanner />
                     <h2>Discover</h2>
                     <CardGrid>
-                        {discoverList.map((discover) => (
-                            <Thumbnail
-                                key={discover.id}
-                                discover={discover.poster_path}
-                                title={discover.name}
-                            />
-                        ))}
+                        <div className="inner">
+                            {discoverList.map((discover) => (
+                                <Thumbnail
+                                    key={discover.id}
+                                    discover={discover.poster_path}
+                                    title={discover.name}
+                                />
+
+                            ))}
+                        </div>
+
                     </CardGrid>
 
                 </main>
