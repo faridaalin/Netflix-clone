@@ -8,9 +8,9 @@ function Thumbnail({ discover, title }) {
     const noImage = `SOMEURL`;
 
     return (
-        <ThumbnailStyled>
+        <ThumbnadivilStyled>
             <img src={imageURL} alt={title} />
-        </ThumbnailStyled>
+        </ThumbnadilStyled>
     );
 }
 
