@@ -18,6 +18,12 @@ const GlobalStyle = createGlobalStyle`
     a {
         text-decoration: none;
     }
+
+    img {
+        height: 100%;
+        min-width: 100%;
+        width: 100%;
+    }
 `;
 
 export default GlobalStyle;
