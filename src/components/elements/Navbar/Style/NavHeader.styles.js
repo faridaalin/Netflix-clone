@@ -22,6 +22,15 @@ export const NavHeader = styled.header`
 
   .nav-item {
     margin: 0 1rem;
+    color: ${({ theme }) => theme.colors.white};
+    filter: ${({ theme }) => theme.brighteness};
+    font-weight: 200;
+    text-transform: uppercase;
+  }
+
+  .nav-item.active {
+    filter: unset;
+    font-weight: 400;
   }
 
   .searchbar {

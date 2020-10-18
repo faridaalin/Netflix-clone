@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { Container } from "./components/styles/app.style";
 import Navbar from "./components/elements/Navbar/Navbar";
 import Footer from "./components/elements/Footer/Footer";
@@ -14,10 +14,11 @@ function App() {
       <Navbar />
       {/* <Home /> */}
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/shows" component={Shows} />
-        <Route exact path="/movies" component={Movies} />
-        <Route exact path="/mylist" component={MyList} />
+        <Route exact path={"/"} component={Home} />
+        <Route path="/shows" component={Shows} />
+        <Route path="/movies" component={Movies} />
+        <Route path="/mylist" component={MyList} />
+        <Redirect to={"/"} />
       </Switch>
       <Footer />
     </Container>

@@ -8,9 +8,9 @@ function Navbar() {
     return (
         <NavHeader>
             <nav className="nav">
-                <NavLink className="logo" to="/">Clone</NavLink>
+                <NavLink className="logo" to="/">CLONE</NavLink>
                 <ul className="nav-items">
-                    <NavLink className="nav-item activeClassName" to="/">Home</NavLink>
+                    <NavLink className="nav-item activeClassName" exact path={"/"} to="/">Home</NavLink>
                     <NavLink className="nav-item activeClassName" to="/shows">Shows</NavLink>
                     <NavLink className="nav-item activeClassName" to="/movies">Movies</NavLink>
                     <NavLink className="nav-item activeClassName" to="/mylist">My List</NavLink>
