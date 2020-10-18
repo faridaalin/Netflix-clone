@@ -26,5 +26,24 @@ export const NavHeader = styled.header`
 
   .searchbar {
     margin-left: auto;
+
+    input[type="search"] {
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgb(130 127 127 / 70%);
+      margin-left: 8px;
+      color: ${({ theme }) => theme.colors.white};
+      padding: 8px 0 4px;
+
+      ::placeholder {
+        color: ${({ theme }) => theme.colors.white};
+        filter: brightness(50%);
+      }
+    }
+
+    .icon {
+      color: ${({ theme }) => theme.colors.white};
+      filter: brightness(90%);
+    }
   }
 `;

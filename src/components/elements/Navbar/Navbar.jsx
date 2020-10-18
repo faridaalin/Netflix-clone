@@ -16,7 +16,7 @@ function Navbar() {
                     <li className="nav-item">My List</li>
                 </ul>
                 <div className="searchbar">
-                    <FontAwesome className="fa-search" name="search" />
+                    <FontAwesome className="fa-search icon" name="search" />
                     <input type="search" name="serach" id="search" placeholder="search.." />
                 </div>
 

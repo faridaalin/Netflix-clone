@@ -1,10 +1,13 @@
 import React from 'react'
+import { StyledFooter } from './style/Footer.style'
 
 function Footer() {
+    const today = new Date();
+    const year = today.getFullYear(today)
     return (
-        <div>
-            Footer
-        </div>
+        <StyledFooter>
+            <section>{year} &copy; created by Farida Alin</section>
+        </StyledFooter>
     )
 }
 

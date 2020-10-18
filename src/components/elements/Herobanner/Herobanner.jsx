@@ -1,7 +1,7 @@
 import React from 'react'
 import FontAwesome from 'react-fontawesome';
 import noImageHero from "../../../images/noimagePoster.png";
-import { IMAGE_BASE_URL, HERO_SIZE } from "../../../config";
+import { IMAGE_BASE_URL } from "../../../config";
 import { StyledHeroBanner } from './styles/StyledHeroBanner.style'
 
 

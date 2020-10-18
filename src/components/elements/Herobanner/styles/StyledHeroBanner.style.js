@@ -56,6 +56,7 @@ export const StyledHeroBanner = styled.section`
 
     p {
       padding-top: calc(16px + 1vw);
+      line-height: 1.6;
     }
   }
 `;

@@ -1,7 +1,6 @@
 import styled from "styled-components/macro";
 
 const CardGrid = styled.section`
-  padding-top: 16px;
   overflow-y: hidden;
   overflow-x: auto;
   width: 95vw;
