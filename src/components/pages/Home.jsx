@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 import { fetchDiscoverData } from "../../redux/reduser/discoverReducer";
 
 
-function Home({ discover, fetchDiscoverData }) {
+function Home({ fetchDiscoverData }) {
     useEffect(() => {
         fetchDiscoverData();
     }, [fetchDiscoverData]);
@@ -27,6 +27,7 @@ function Home({ discover, fetchDiscoverData }) {
                     <SubHeader>Discover</SubHeader>
                     <CardGrid>
                         <div className="inner">
+                            {console.log(discoverList)}
                             {discoverList.map((discover) => (
                                 <Thumbnail
                                     key={discover.id}

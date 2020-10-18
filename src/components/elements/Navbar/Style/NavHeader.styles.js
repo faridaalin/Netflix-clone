@@ -26,6 +26,8 @@ export const NavHeader = styled.header`
 
   .searchbar {
     margin-left: auto;
+    display: flex;
+    align-items: flex-end;
 
     input[type="search"] {
       background: transparent;
@@ -44,6 +46,7 @@ export const NavHeader = styled.header`
     .icon {
       color: ${({ theme }) => theme.colors.white};
       filter: ${({ theme }) => theme.brighteness};
+      font-size: 18px;
     }
   }
 `;

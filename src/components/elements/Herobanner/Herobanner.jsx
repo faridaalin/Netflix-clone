@@ -13,7 +13,6 @@ function Herobanner({ discoverList }) {
             {discoverList &&
                 <StyledHeroBanner imageUrl={imageUrl ? `${IMAGE_BASE_URL}original${imageUrl}` : noImageHero}>
                     <div className="hero-img">
-                        {console.log(discoverList)}
                         <div className="hero-content">
                             {console.log(discoverList)}
                             <h2>{discoverList.name}</h2>

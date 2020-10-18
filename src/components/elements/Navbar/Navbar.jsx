@@ -1,6 +1,6 @@
 import React from 'react'
+import { NavLink } from "react-router-dom";
 import FontAwesome from 'react-fontawesome';
-import { Link } from 'react-router-dom';
 import { NavHeader } from './Style/NavHeader.styles'
 
 
@@ -8,12 +8,12 @@ function Navbar() {
     return (
         <NavHeader>
             <nav className="nav">
-                <Link className="logo" to="/">Clone</Link>
+                <NavLink className="logo" to="/">Clone</NavLink>
                 <ul className="nav-items">
-                    <li className="nav-item">Home</li>
-                    <li className="nav-item">Shows</li>
-                    <li className="nav-item">Movies</li>
-                    <li className="nav-item">My List</li>
+                    <NavLink className="nav-item activeClassName" to="/">Home</NavLink>
+                    <NavLink className="nav-item activeClassName" to="/shows">Shows</NavLink>
+                    <NavLink className="nav-item activeClassName" to="/movies">Movies</NavLink>
+                    <NavLink className="nav-item activeClassName" to="/mylist">My List</NavLink>
                 </ul>
                 <div className="searchbar">
                     <FontAwesome className="fa-search icon" name="search" />

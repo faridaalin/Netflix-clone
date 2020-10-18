@@ -6,5 +6,6 @@ export const Container = styled.div`
   display: grid;
   height: 100vh;
   grid-template-rows: auto 1fr auto;
+  grid-template-columns: 1fr;
   justify-content: center;
 `;
