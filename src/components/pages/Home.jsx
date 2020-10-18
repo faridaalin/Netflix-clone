@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Herobanner from "../elements/Herobanner/Herobanner";
 import Thumbnail from "../elements/Thumbnail/Thumbnail";
 import CardGrid from '../styles/Grid/CardGrid.style'
+import SubHeader from '../elements/Header/SubHeader'
 import { connect } from "react-redux";
 import { useSelector } from "react-redux";
 import { fetchDiscoverData } from "../../redux/reduser/discoverReducer";
@@ -22,8 +23,8 @@ function Home({ discover, fetchDiscoverData }) {
         <h2>{errorMsg}</h2>
     ) : (
                 <main>
-                    <Herobanner />
-                    <h2>Discover</h2>
+                    <Herobanner discoverList={discoverList[0]} />
+                    <SubHeader>Discover</SubHeader>
                     <CardGrid>
                         <div className="inner">
                             {discoverList.map((discover) => (
@@ -32,7 +33,6 @@ function Home({ discover, fetchDiscoverData }) {
                                     discover={discover.poster_path}
                                     title={discover.name}
                                 />
-
                             ))}
                         </div>
 

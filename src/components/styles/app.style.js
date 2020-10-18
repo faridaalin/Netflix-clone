@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 export const Container = styled.div`
   width: calc(100% - 10vw);
@@ -6,4 +6,5 @@ export const Container = styled.div`
   display: grid;
   height: 100vh;
   grid-template-rows: auto 1fr auto;
+  justify-content: center;
 `;

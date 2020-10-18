@@ -9,6 +9,8 @@ const theme = {
   },
   mixins,
 
+  linearGradient:
+    "linear-gradient(94deg, rgba(2,0,36,1) 27%, rgba(2,0,36,0.5046393557422969) 50%)",
   mediaQueries: {
     sm: `only screen and (min-width: 576px)`,
     md: `only screen and (min-width: 798px)`,

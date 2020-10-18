@@ -5,12 +5,13 @@ import { IMAGE_BASE_URL, THUMBNAIL_SIZE } from "../../../config";
 
 function Thumbnail({ discover, title }) {
     const imageURL = `${IMAGE_BASE_URL}${THUMBNAIL_SIZE}${discover}`;
-    const noImage = `SOMEURL`;
+    // const noImage = `SOMEURL`;
 
     return (
-        <ThumbnadivilStyled>
+        <ThumbnailStyled>
             <img src={imageURL} alt={title} />
-        </ThumbnadilStyled>
+        </ThumbnailStyled>
+
     );
 }
 
