@@ -27,7 +27,6 @@ function Home({ fetchDiscoverData }) {
                     <SubHeader>Discover</SubHeader>
                     <CardGrid>
                         <div className="inner">
-                            {console.log(discoverList)}
                             {discoverList.map((discover) => (
                                 <Thumbnail
                                     key={discover.id}

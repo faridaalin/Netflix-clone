@@ -12,5 +12,6 @@ export const ThumbnailStyled = styled.div`
   :active {
     transform: scale(1.2);
     z-index: 100;
+    /* padding-left: 8px; */
   }
 `;

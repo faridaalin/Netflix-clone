@@ -18,6 +18,7 @@ const CardGrid = styled.section`
     display: inline-flex;
     flex-wrap: nowrap;
     justify-content: space-around;
+    padding: 8px 0;
   }
 `;
 

@@ -14,7 +14,6 @@ function Herobanner({ discoverList }) {
                 <StyledHeroBanner imageUrl={imageUrl ? `${IMAGE_BASE_URL}original${imageUrl}` : noImageHero}>
                     <div className="hero-img">
                         <div className="hero-content">
-                            {console.log(discoverList)}
                             <h2>{discoverList.name}</h2>
                             <div className="buttons">
                                 <button> <FontAwesome className="fas fa-play btn-icon" name="search" /> Play</button>

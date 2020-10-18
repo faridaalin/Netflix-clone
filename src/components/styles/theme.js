@@ -6,6 +6,7 @@ const theme = {
   colors: {
     white: "#efeeed",
     btnColor: "rgba(51,51,51,0.5)",
+    bgBlack: "#1b1b1b",
   },
   mixins,
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect, withRouter } from "react-router-dom";
 import { Container } from "./components/styles/app.style";
 import Navbar from "./components/elements/Navbar/Navbar";
 import Footer from "./components/elements/Footer/Footer";
@@ -12,7 +12,6 @@ function App() {
   return (
     <Container>
       <Navbar />
-      {/* <Home /> */}
       <Switch>
         <Route exact path={"/"} component={Home} />
         <Route path="/shows" component={Shows} />
@@ -25,4 +24,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);

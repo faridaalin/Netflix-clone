@@ -3,7 +3,7 @@ import styled from "styled-components/macro";
 export const StyledHeroBanner = styled.section`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 50vh;
+  grid-template-rows: calc(300px + 10vw);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 
@@ -12,7 +12,7 @@ export const StyledHeroBanner = styled.section`
       url(${({ imageUrl }) => imageUrl});
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    background-position: top center;
     grid-area: 1 / 1 / 2 / 2;
     ${({ theme }) => theme.mixins.flexCenter};
     padding: 0 16px;
@@ -57,6 +57,7 @@ export const StyledHeroBanner = styled.section`
     p {
       padding-top: calc(16px + 1vw);
       line-height: 1.6;
+      font-size: calc(10px + 0.5vw);
     }
   }
 `;
