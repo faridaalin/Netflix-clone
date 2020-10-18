@@ -37,13 +37,13 @@ export const NavHeader = styled.header`
 
       ::placeholder {
         color: ${({ theme }) => theme.colors.white};
-        filter: brightness(50%);
+        filter: ${({ theme }) => theme.brighteness};
       }
     }
 
     .icon {
       color: ${({ theme }) => theme.colors.white};
-      filter: brightness(90%);
+      filter: ${({ theme }) => theme.brighteness};
     }
   }
 `;

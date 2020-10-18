@@ -43,7 +43,7 @@ export const StyledHeroBanner = styled.section`
       color: white;
       border: none;
       border-radius: 5px;
-      padding: 1rem 2rem;
+      padding: 0.8rem calc(1rem + 1vw);
       background: rgb(46 45 45 / 0.7);
       margin-right: 16px;
       ${({ theme }) => theme.mixins.flexHorizontal};
