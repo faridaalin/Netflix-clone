@@ -1,16 +1,30 @@
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 export const NavHeader = styled.header`
-  padding: 16px 0;
+  padding: 16px 16px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
 
   .nav {
     position: relative;
+
+    @media ${({ theme }) => theme.mediaQueries.md} {
+      display: flex;
+      align-items: center;
+    }
   }
 
   .inner {
     display: flex;
     justify-content: space-between;
     width: 100%;
+
+    @media ${({ theme }) => theme.mediaQueries.md} {
+      width: unset;
+    }
   }
 
   .logo {
@@ -23,6 +37,10 @@ export const NavHeader = styled.header`
     cursor: pointer;
     color: ${({ theme }) => theme.colors.white};
 
+    @media ${({ theme }) => theme.mediaQueries.md} {
+      display: none;
+    }
+
     .fa {
       font-size: 21px;
     }
@@ -30,22 +48,28 @@ export const NavHeader = styled.header`
 
   .nav-items {
     position: absolute;
-    list-style: none;
     transform: ${({ showMenu }) =>
       showMenu ? "translateY(0%)" : "translateY(-119%)"};
     width: 100%;
     padding: 32px 16px 32px 16px;
     background: ${({ theme }) => theme.colors.bgBlack};
     transition: transform 0.3s ease-in-out;
+    list-style: none;
 
     @media ${({ theme }) => theme.mediaQueries.md} {
-      display: block;
       ${({ theme }) => theme.mixins.flexHorizontal};
       padding: 0;
+      background-color: transparent;
+      position: unset;
+      transform: translateY(0%);
     }
   }
   li {
     margin-bottom: 0.5rem;
+
+    @media ${({ theme }) => theme.mediaQueries.md} {
+      margin-bottom: 0;
+    }
   }
 
   li:last-child {

@@ -11,7 +11,7 @@ function Herobanner({ discoverList }) {
     return (
         <>
             {discoverList &&
-                <StyledHeroBanner imageUrl={imageUrl ? `${IMAGE_BASE_URL}original${imageUrl}` : noImageHero}>
+                <StyledHeroBanner className="herobanner" imageUrl={imageUrl ? `${IMAGE_BASE_URL}original${imageUrl}` : noImageHero}>
                     <div className="hero-img">
                         <div className="hero-content">
                             <h2>{discoverList.name}</h2>

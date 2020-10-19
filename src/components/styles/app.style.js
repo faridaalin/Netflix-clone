@@ -5,7 +5,11 @@ export const Container = styled.div`
   margin: 0 auto;
   display: grid;
   height: 100vh;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: 1fr auto;
   grid-template-columns: 1fr;
   justify-content: center;
+
+  .herobanner {
+    margin-top: ${(props) => -+props.height + "px"};
+  }
 `;

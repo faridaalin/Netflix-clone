@@ -4,9 +4,10 @@ import FontAwesome from 'react-fontawesome';
 import { NavHeader } from './Style/NavHeader.styles'
 
 
-function Navbar(props) {
+function Navbar({ setDimentions }) {
     const [showMenu, setShowMenu] = useState(false)
     const dropdown = useRef(null)
+
 
     const toggleMenu = () => {
         setShowMenu(!showMenu)
@@ -22,11 +23,21 @@ function Navbar(props) {
 
 
     }, [])
+    useEffect(() => {
+        window.addEventListener('load', () => {
+            setDimentions(dropdown.current.offsetHeight)
+        })
+
+        window.addEventListener('resize', () => {
+            setDimentions(dropdown.current.offsetHeight)
+
+        })
+    }, [setDimentions])
+
 
 
     return (
         <NavHeader showMenu={showMenu} ref={dropdown}>
-            {console.log(props)}
             <nav className="nav">
                 <div className="inner">
                     <NavLink className="logo" to="/">CLONE</NavLink>

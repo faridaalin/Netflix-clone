@@ -9,6 +9,9 @@ import { fetchDiscoverData } from "../../redux/reduser/discoverReducer";
 
 
 function Home({ fetchDiscoverData }) {
+
+
+
     useEffect(() => {
         fetchDiscoverData();
     }, [fetchDiscoverData]);
@@ -17,12 +20,14 @@ function Home({ fetchDiscoverData }) {
     const errorMsg = useSelector((state) => state.discover.error);
     const discoverList = useSelector((state) => state.discover.result);
 
+
+
     return loading ? (
         <h2>Loading...</h2>
     ) : errorMsg ? (
         <h2>{errorMsg}</h2>
     ) : (
-                <main>
+                <main >
                     <Herobanner discoverList={discoverList[0]} />
                     <SubHeader>Discover</SubHeader>
                     <CardGrid>

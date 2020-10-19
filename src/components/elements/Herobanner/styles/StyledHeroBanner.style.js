@@ -3,9 +3,11 @@ import styled from "styled-components/macro";
 export const StyledHeroBanner = styled.section`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: calc(300px + 10vw);
+  grid-template-rows: calc(400px + 10vw);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
 
   .hero-img {
     background: ${({ theme }) => theme.linearGradient},
@@ -15,7 +17,7 @@ export const StyledHeroBanner = styled.section`
     background-position: top center;
     grid-area: 1 / 1 / 2 / 2;
     ${({ theme }) => theme.mixins.flexCenter};
-    padding: 0 16px;
+    padding: 60px 16px 0;
   }
 
   .hero-content {

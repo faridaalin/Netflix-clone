@@ -11,8 +11,9 @@ const GlobalStyle = createGlobalStyle`
     
     body {
         font-family: 'Open Sans', sans-serif;
-        background-color: #1b1b1b;
-        color: #efeeed;
+        background-color: ${({ theme: { colors } }) => colors.bgBlack};
+        color: ${({ theme: { colors } }) => colors.white};
+        padding-top: ${(props) => props.height + "px"};
     }
 
     a {
