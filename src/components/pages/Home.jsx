@@ -10,7 +10,7 @@ import { getDiscoverList } from '../../actions/discoverActions'
 
 function Home(props) {
     const dispatch = useDispatch();
-    const discoverList = useSelector((state) => state.DiscoverList.data);
+    const discoverList = useSelector((state) => state.DiscoverList);
 
     useEffect(() => {
         dispatch(getDiscoverList())
@@ -20,18 +20,18 @@ function Home(props) {
         if (discoverList.loading) {
             return <p>Loading..</p>
         };
-        if (discoverList.error) {
-            return <p>Eroor..</p>
+        if (discoverList.errorMsg !== "") {
+            return <p>Error..</p>
         }
 
-        if (discoverList && discoverList[0]) {
+        if (discoverList.data && discoverList.data[0]) {
             return (
                 <main >
-                    <Herobanner discoverList={discoverList[0]} />
+                    <Herobanner discoverList={discoverList.data[0]} />
                     <SubHeader>Discover</SubHeader>
                     <CardGrid>
                         <div className="inner">
-                            {discoverList.map((discover) => (
+                            {discoverList.data.map((discover) => (
                                 <Thumbnail
                                     key={discover.id}
                                     discover={discover.poster_path}
@@ -39,7 +39,6 @@ function Home(props) {
                                 />
                             ))}
                         </div>
-
                     </CardGrid>
 
                 </main>
@@ -54,6 +53,7 @@ function Home(props) {
     return (
         <>
             {showData()}
+
         </>
     )
 }

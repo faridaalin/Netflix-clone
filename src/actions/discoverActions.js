@@ -20,9 +20,6 @@ export const getDiscoverList = () => async (dispatch) => {
       type: DISCOVER_LIST_SUCCESS,
       payload: res,
     });
-
-    // console.log(res);
-    // console.log("AXIOS:", res.data.results);
   } catch (error) {
     dispatch({
       type: DISCOVER_LIST_FAIL,
