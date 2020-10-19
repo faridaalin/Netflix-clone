@@ -1,13 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { NavLink } from "react-router-dom";
 import FontAwesome from 'react-fontawesome';
 import { NavHeader } from './Style/NavHeader.styles'
 
 
-function Navbar({ setDimentions }) {
-    const [showMenu, setShowMenu] = useState(false)
+function Navbar({ setDimentions, showMenu, setShowMenu }) {
     const dropdown = useRef(null)
-
 
     const toggleMenu = () => {
         setShowMenu(!showMenu)
@@ -33,7 +31,6 @@ function Navbar({ setDimentions }) {
 
         })
     }, [setDimentions])
-
 
 
     return (

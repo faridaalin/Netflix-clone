@@ -9,7 +9,7 @@ export const NavHeader = styled.header`
   width: 100%;
 
   .nav {
-    position: relative;
+    /* position: relative; */
 
     @media ${({ theme }) => theme.mediaQueries.md} {
       display: flex;
@@ -21,6 +21,8 @@ export const NavHeader = styled.header`
     display: flex;
     justify-content: space-between;
     width: 100%;
+    position: relative;
+    z-index: 200;
 
     @media ${({ theme }) => theme.mediaQueries.md} {
       width: unset;
@@ -48,10 +50,13 @@ export const NavHeader = styled.header`
 
   .nav-items {
     position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     transform: ${({ showMenu }) =>
       showMenu ? "translateY(0%)" : "translateY(-119%)"};
     width: 100%;
-    padding: 32px 16px 32px 16px;
+    padding: 72px 16px 32px 16px;
     background: ${({ theme }) => theme.colors.bgBlack};
     transition: transform 0.3s ease-in-out;
     list-style: none;
