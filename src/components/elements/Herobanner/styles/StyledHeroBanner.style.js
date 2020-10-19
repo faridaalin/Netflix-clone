@@ -17,7 +17,7 @@ export const StyledHeroBanner = styled.section`
     background-position: top center;
     grid-area: 1 / 1 / 2 / 2;
     ${({ theme }) => theme.mixins.flexCenter};
-    padding: 60px 16px 0;
+    padding: 60px calc(16px + 1vw) 0;
   }
 
   .hero-content {
@@ -42,13 +42,18 @@ export const StyledHeroBanner = styled.section`
     button {
       cursor: pointer;
       font-size: 16px;
-      color: white;
+      color: ${({ theme }) => theme.colors.white};
       border: none;
-      border-radius: 5px;
+      border-radius: 3px;
       padding: 0.8rem calc(1rem + 1vw);
       background: rgb(46 45 45 / 0.7);
       margin-right: 16px;
       ${({ theme }) => theme.mixins.flexHorizontal};
+
+      :hover {
+        background: ${({ theme }) => theme.colors.white};
+        color: ${({ theme }) => theme.colors.bgBlack};
+      }
     }
 
     .btn-icon {

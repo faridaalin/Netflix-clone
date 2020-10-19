@@ -37,7 +37,7 @@ function App(props) {
             <Redirect to={"/"} />
           </Switch>
           <Footer />
-          <GlobalStyle />
+          <GlobalStyle height={dimentions} />
         </Container>
       </Theme>
     </>
