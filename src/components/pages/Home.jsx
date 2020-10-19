@@ -3,30 +3,29 @@ import Herobanner from "../elements/Herobanner/Herobanner";
 import Thumbnail from "../elements/Thumbnail/Thumbnail";
 import CardGrid from '../styles/Grid/CardGrid.style'
 import SubHeader from '../elements/Header/SubHeader'
-import { connect } from "react-redux";
 import { useSelector } from "react-redux";
-import { fetchDiscoverData } from "../../redux/reduser/discoverReducer";
+import { useDispatch } from "react-redux"
+import { getDiscoverList } from '../../actions/discoverActions'
 
 
-function Home({ fetchDiscoverData }) {
-
-
+function Home(props) {
+    const dispatch = useDispatch();
+    const discoverList = useSelector((state) => state.DiscoverList.data);
 
     useEffect(() => {
-        fetchDiscoverData();
-    }, [fetchDiscoverData]);
+        dispatch(getDiscoverList())
+    }, [dispatch])
 
-    const loading = useSelector((state) => state.discover.loading);
-    const errorMsg = useSelector((state) => state.discover.error);
-    const discoverList = useSelector((state) => state.discover.result);
+    const showData = () => {
+        if (discoverList.loading) {
+            return <p>Loading..</p>
+        };
+        if (discoverList.error) {
+            return <p>Eroor..</p>
+        }
 
-
-
-    return loading ? (
-        <h2>Loading...</h2>
-    ) : errorMsg ? (
-        <h2>{errorMsg}</h2>
-    ) : (
+        if (discoverList && discoverList[0]) {
+            return (
                 <main >
                     <Herobanner discoverList={discoverList[0]} />
                     <SubHeader>Discover</SubHeader>
@@ -44,19 +43,19 @@ function Home({ fetchDiscoverData }) {
                     </CardGrid>
 
                 </main>
-            );
+            )
+        }
+
+        return <p>unable to get data</p>
+    }
+
+
+
+    return (
+        <>
+            {showData()}
+        </>
+    )
 }
 
-const mapStateToProps = (state) => {
-    return {
-        discoverDate: state.discover,
-    };
-};
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        fetchDiscoverData: () => dispatch(fetchDiscoverData()),
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;

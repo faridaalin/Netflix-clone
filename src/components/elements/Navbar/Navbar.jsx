@@ -43,10 +43,10 @@ function Navbar({ setDimentions, showMenu, setShowMenu }) {
                     </button>
                 </div>
                 <ul className="nav-items" >
-                    <li><NavLink className="nav-item activeClassName" exact path={"/"} to="/">Home</NavLink></li>
-                    <li><NavLink className="nav-item activeClassName" to="/shows">Shows</NavLink></li>
-                    <li><NavLink className="nav-item activeClassName" to="/movies">Movies</NavLink></li>
-                    <li><NavLink className="nav-item activeClassName" to="/mylist">My List</NavLink></li>
+                    <li><NavLink className="nav-item" exact path={"/"} to="/">Home</NavLink></li>
+                    <li><NavLink className="nav-item" to="/shows">Shows</NavLink></li>
+                    <li><NavLink className="nav-item" to="/movies">Movies</NavLink></li>
+                    <li><NavLink className="nav-item" to="/mylist">My List</NavLink></li>
                     <div className="searchbar">
                         <FontAwesome className="fa-search icon" name="search" />
                         <input type="search" name="serach" id="search" placeholder="search.." />

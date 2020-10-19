@@ -31,9 +31,9 @@ function App(props) {
           />
           <Switch>
             <Route exact path={"/"} component={Home} />
-            <Route path="/shows" component={Shows} />
-            <Route path="/movies" component={Movies} />
-            <Route path="/mylist" component={MyList} />
+            <Route exact path="/shows" component={Shows} />
+            <Route exact path="/movies" component={Movies} />
+            <Route exact path="/mylist" component={MyList} />
             <Redirect to={"/"} />
           </Switch>
           <Footer />
