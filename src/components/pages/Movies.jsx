@@ -24,20 +24,21 @@ function Movies(props) {
             return <p>Eroor..</p>
         }
 
-        if (movieList && movieList[0]) {
+
+        if (movieList.data && movieList.data[0]) {
+
             return (
                 <main >
-                    <Herobanner discoverList={movieList[0]} />
+                    <Herobanner item={movieList.data[5]} />
                     <SubHeader>Movies</SubHeader>
                     <CardGrid>
                         <div className="inner">
-                            {movieList.map((movie) => (
-                                console.log(movie)
-                                // <Thumbnail
-                                //     key={movie.id}
-                                //     discover={movie.poster_path}
-                                //     title={movie.name}
-                                // />
+                            {movieList.data.map((movie) => (
+                                < Thumbnail
+                                    key={movie.id}
+                                    item={movie.poster_path}
+                                    title={movie.name}
+                                />
                             ))}
                         </div>
 
@@ -45,6 +46,8 @@ function Movies(props) {
 
                 </main>
             )
+
+
         }
 
         return <p>unable to get data</p>
@@ -55,7 +58,7 @@ function Movies(props) {
     return (
         <>
             {showData()}
-            <p>{console.log(movieList && movieList[0])}</p>
+
         </>
     )
 }

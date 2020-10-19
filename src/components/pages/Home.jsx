@@ -27,15 +27,15 @@ function Home(props) {
         if (discoverList.data && discoverList.data[0]) {
             return (
                 <main >
-                    <Herobanner discoverList={discoverList.data[0]} />
+                    <Herobanner item={discoverList.data[0]} />
                     <SubHeader>Discover</SubHeader>
                     <CardGrid>
                         <div className="inner">
-                            {discoverList.data.map((discover) => (
+                            {discoverList.data.map((item) => (
                                 <Thumbnail
-                                    key={discover.id}
-                                    discover={discover.poster_path}
-                                    title={discover.name}
+                                    key={item.id}
+                                    item={item.poster_path}
+                                    title={item.name}
                                 />
                             ))}
                         </div>
