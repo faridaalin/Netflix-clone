@@ -20,7 +20,7 @@ function Navbar({ setDimentions, showMenu, setShowMenu }) {
         document.addEventListener("mousedown", handleClickOutside);
 
 
-    }, [])
+    }, [setShowMenu])
     useEffect(() => {
         window.addEventListener('load', () => {
             setDimentions(dropdown.current.offsetHeight)

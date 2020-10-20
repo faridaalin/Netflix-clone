@@ -1,8 +1,8 @@
 import {
-  MOVIES_LIST_LOADING,
-  MOVIES_LIST_SUCCESS,
-  MOVIES_LIST_FAIL,
-} from "../actions/movieActions";
+  DOCUMENTARIES_LIST_LOADING,
+  DOCUMENTARIES_LIST_SUCCESS,
+  DOCUMENTARIES_LIST_FAIL,
+} from "../actions/documentariesActions";
 
 const initialState = {
   loading: false,
@@ -10,23 +10,23 @@ const initialState = {
   errorMsg: "",
 };
 
-const MovieListReducer = (state = initialState, action) => {
+const DocumentariesListReducer = (state = initialState, action) => {
   switch (action.type) {
-    case MOVIES_LIST_LOADING:
+    case DOCUMENTARIES_LIST_LOADING:
       return {
         ...state,
         loading: true,
         errorMsg: "",
       };
 
-    case MOVIES_LIST_FAIL:
+    case DOCUMENTARIES_LIST_FAIL:
       return {
         ...state,
         loading: false,
-        errorMsg: "Unable to get movie list",
+        errorMsg: "Unable to get documentaries list",
       };
 
-    case MOVIES_LIST_SUCCESS:
+    case DOCUMENTARIES_LIST_SUCCESS:
       return {
         ...state,
         loading: false,
@@ -39,4 +39,4 @@ const MovieListReducer = (state = initialState, action) => {
   }
 };
 
-export default MovieListReducer;
+export default DocumentariesListReducer;
