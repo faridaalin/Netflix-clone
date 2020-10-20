@@ -7,6 +7,7 @@ import {
 const initialState = {
   loading: false,
   data: [],
+  title: "Documentaries",
   errorMsg: "",
 };
 

@@ -7,10 +7,11 @@ import {
 const initialState = {
   loading: false,
   data: [],
+  title: "Movies",
   errorMsg: "",
 };
 
-const MovieListReducer = (state = initialState, action) => {
+const reducerMovieList = (state = initialState, action) => {
   switch (action.type) {
     case MOVIES_LIST_LOADING:
       return {
@@ -39,4 +40,4 @@ const MovieListReducer = (state = initialState, action) => {
   }
 };
 
-export default MovieListReducer;
+export default reducerMovieList;

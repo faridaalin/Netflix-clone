@@ -7,10 +7,11 @@ import {
 const initialState = {
   loading: false,
   data: [],
+  title: "Discover",
   errorMsg: "",
 };
 
-const DiscoverListReducer = (state = initialState, action) => {
+const reducerDiscover = (state = initialState, action) => {
   switch (action.type) {
     case DISCOVER_LIST_LOADING:
       return {
@@ -39,4 +40,4 @@ const DiscoverListReducer = (state = initialState, action) => {
   }
 };
 
-export default DiscoverListReducer;
+export default reducerDiscover;

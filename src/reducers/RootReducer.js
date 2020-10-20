@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
-import DiscoverListReducer from "./DiscoverListReducer";
-import MovieListReducer from "./MovieListReducer";
-import DocumentariesListReducer from "./DocumentariesListReducer";
+import reducerDiscover from "./reducerDiscover";
+import reducerMovieList from "./reducerMovieList";
+import reducerDocumentariesList from "./reducerDocumentariesList";
 
 const RootReducer = combineReducers({
-  DiscoverList: DiscoverListReducer,
-  MovieList: MovieListReducer,
-  DocumentariesList: DocumentariesListReducer,
+  DiscoverList: reducerDiscover,
+  MovieList: reducerMovieList,
+  DocumentariesList: reducerDocumentariesList,
 });
 
 export default RootReducer;
