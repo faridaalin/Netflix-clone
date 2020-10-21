@@ -8,8 +8,4 @@ export const Container = styled.div`
   grid-template-rows: 1fr auto;
   grid-template-columns: 1fr;
   justify-content: center;
-
-  .herobanner {
-    margin-top: ${(props) => -+props.height + "px"};
-  }
 `;

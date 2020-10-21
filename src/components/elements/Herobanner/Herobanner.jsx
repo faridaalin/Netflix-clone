@@ -10,16 +10,15 @@ function Herobanner({ item }) {
         <>
             {item &&
                 <StyledHeroBanner className="herobanner" imageUrl={item && item.backdrop_path ? `${IMAGE_BASE_URL}${item.backdrop_path}` : noImageHero}>
-                    <div className="hero-img">
-                        <div className="hero-content">
-                            <h2>{item.name ? item.name : item.title}</h2>
-                            <div className="buttons">
-                                <button> <FontAwesome className="fas fa-play btn-icon" name="search" /> Play</button>
-                                <button><FontAwesome className="fas fa-plus btn-icon" name="search" /> My list</button>
-                            </div>
-                            <p>{item.overview}</p>
+                    <div className="hero-content">
+                        <h2>{item.name ? item.name : item.title}</h2>
+                        <div className="buttons">
+                            <button> <FontAwesome className="fas fa-play btn-icon" name="search" /> Play</button>
+                            <button><FontAwesome className="fas fa-plus btn-icon" name="search" /> My list</button>
                         </div>
+                        <p>{item.overview}</p>
                     </div>
+                    <div className="herobanner__fade" />
                 </StyledHeroBanner>}
         </>
     )

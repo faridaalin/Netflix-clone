@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Switch, Route, Redirect, withRouter } from "react-router-dom";
+import React, { useState } from "react";
+import { Switch, Route, Redirect } from "react-router-dom";
 import { Container } from "./components/styles/app.style";
 import Navbar from "./components/elements/Navbar/Navbar";
 import Footer from "./components/elements/Footer/Footer";
@@ -11,24 +11,13 @@ import Theme from "./components/styles/theme";
 import GlobalStyle from "./components/styles/globalStyles";
 
 function App(props) {
-  const [showMenu, setShowMenu] = useState(false);
   const [dimentions, setDimentions] = useState("");
-
-  useEffect(() => {
-    props.history.listen(() => {
-      setShowMenu(false);
-    });
-  });
 
   return (
     <>
       <Theme>
         <Container height={dimentions}>
-          <Navbar
-            setDimentions={setDimentions}
-            showMenu={showMenu}
-            setShowMenu={setShowMenu}
-          />
+          <Navbar setDimentions={setDimentions} />
           <Switch>
             <Route exact path={"/"} component={Home} />
             <Route exact path="/shows" component={Shows} />
@@ -44,4 +33,4 @@ function App(props) {
   );
 }
 
-export default withRouter(App);
+export default App;

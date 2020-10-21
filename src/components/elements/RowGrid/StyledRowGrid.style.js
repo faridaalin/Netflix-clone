@@ -20,8 +20,7 @@ export const StyledRowGrid = styled.section`
   }
 
   .row__img {
-    object-fit: contain;
-    max-width: 100px;
+    max-width: 200px;
     margin-right: 10px;
     transition: transform 450ms;
 
@@ -33,10 +32,12 @@ export const StyledRowGrid = styled.section`
     }
   }
 
-  .row_img--large {
+  .row__img.row_img--large {
     max-height: 250px;
+    max-width: 100%;
   }
-  .row_img--large::hover {
+
+  .row__img.row_img--large::hover {
     max-height: 250px;
     transform: scale(1.1);
   }

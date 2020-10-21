@@ -13,7 +13,6 @@ const GlobalStyle = createGlobalStyle`
         font-family: 'Open Sans', sans-serif;
         background-color: ${({ theme: { colors } }) => colors.bgBlack};
         color: ${({ theme: { colors } }) => colors.white};
-        padding-top: ${(props) => props.height + "px"};
     }
 
     a {

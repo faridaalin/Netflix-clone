@@ -1,72 +1,42 @@
 import styled from "styled-components/macro";
 
 export const NavHeader = styled.header`
-  padding: 16px 16px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 16px calc(16px + 1vw);
+  z-index: 1;
+  background-color: ${({ addbgColor }) =>
+    addbgColor ? "#111" : "transparent"};
+  transition: all 0.2s ease-in-out;
+  ${({ addbgColor }) => console.log(addbgColor)};
 
   .nav {
-    @media ${({ theme }) => theme.mediaQueries.md} {
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  .inner {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
-    position: relative;
-    z-index: 200;
+    margin-left: auto;
+    display: none;
 
     @media ${({ theme }) => theme.mediaQueries.md} {
-      width: unset;
+      display: block;
+      padding-left: 32px;
     }
   }
 
-  .nav__logo {
+  .logo {
     width: 80px;
     object-fit: cover;
-  }
-
-  .mobile-nav {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    color: ${({ theme }) => theme.colors.white};
-
-    @media ${({ theme }) => theme.mediaQueries.md} {
-      display: none;
-    }
-
-    .fa {
-      font-size: 21px;
-    }
+    display: flex;
   }
 
   .nav-items {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    transform: ${({ showMenu }) =>
-      showMenu ? "translateY(0%)" : "translateY(-119%)"};
-    width: 100%;
-    padding: 72px 16px 32px 16px;
-    background: ${({ theme }) => theme.colors.bgBlack};
     transition: transform 0.3s ease-in-out;
     list-style: none;
-
-    @media ${({ theme }) => theme.mediaQueries.md} {
-      ${({ theme }) => theme.mixins.flexHorizontal};
-      padding: 0;
-      background-color: transparent;
-      position: unset;
-      transform: translateY(0%);
-    }
+    width: 100%;
+    margin-left: auto;
+    ${({ theme }) => theme.mixins.flexHorizontal};
   }
   li {
     margin-bottom: 0.5rem;
@@ -100,6 +70,9 @@ export const NavHeader = styled.header`
     font-weight: 400;
   }
 
+  .nav-item-pseudo {
+    cursor: pointer;
+  }
   .searchbar {
     margin-left: auto;
     display: flex;

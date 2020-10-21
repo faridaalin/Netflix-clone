@@ -1,51 +1,58 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { NavLink } from "react-router-dom";
 import FontAwesome from 'react-fontawesome';
 import { NavHeader } from './Style/NavHeader.styles'
 
 
 function Navbar({ setDimentions, showMenu, setShowMenu }) {
-    const dropdown = useRef(null)
+    const [show, setShow] = useState(false)
+    const [addbgColor, setAddbgColor] = useState(false)
 
-    const toggleMenu = () => {
-        setShowMenu(!showMenu)
-    }
 
     useEffect(() => {
-        const handleClickOutside = (e) => {
-            if (dropdown.current && !dropdown.current.contains(e.target)) {
-                setShowMenu(false)
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 768) {
+                setShow(true)
+            } else {
+                setShow(false)
             }
+        });
+
+        return () => {
+            window.addEventListener("resize")
         }
-        document.addEventListener("mousedown", handleClickOutside);
-
-
-    }, [setShowMenu])
+    }, [])
     useEffect(() => {
-        window.addEventListener('load', () => {
-            setDimentions(dropdown.current.offsetHeight)
-        })
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 15) {
+                setAddbgColor(true)
+            } else {
+                setAddbgColor(false)
 
-        window.addEventListener('resize', () => {
-            setDimentions(dropdown.current.offsetHeight)
+            }
+        });
 
-        })
-    }, [setDimentions])
+        return () => {
+            window.addEventListener("scroll")
+        }
+    }, [])
+
+
+
+
+
 
 
     return (
-        <NavHeader showMenu={showMenu} ref={dropdown}>
+        <NavHeader show={show} addbgColor={addbgColor}>
+
+
+            <NavLink className="logo" to="/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Logo_Netflix.png/800px-Logo_Netflix.png" alt="Netflix logo" /></NavLink>
             <nav className="nav">
-                <div className="inner">
-                    <NavLink className="nav__logo" to="/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Logo_Netflix.png/800px-Logo_Netflix.png" alt="Netflix logo" /></NavLink>
-                    <button className="mobile-nav" onClick={toggleMenu}>
-                        <FontAwesome className="fa fa-bars" name="bars" />
-                    </button>
-                </div>
                 <ul className="nav-items" >
                     <li><NavLink className="nav-item" exact path={"/"} to="/">Home</NavLink></li>
-                    <li><NavLink className="nav-item" to="/shows">Shows</NavLink></li>
-                    <li><NavLink className="nav-item" to="/movies">Movies</NavLink></li>
+                    <li className="nav-item nav-item-pseudo">Shows</li>
+                    <li className="nav-item nav-item-pseudo">Movies</li>
                     <li><NavLink className="nav-item" to="/mylist">My List</NavLink></li>
                     <div className="searchbar">
                         <FontAwesome className="fa-search icon" name="search" />
