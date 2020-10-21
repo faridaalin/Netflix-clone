@@ -18,11 +18,12 @@ function Home(props) {
 
             <RowGrid title="NETFLIX ORIGINALS" islargeImg alreadyFetched getUrl={requests.fetchNetflixOriginals} />
             <RowGrid title="Top Movies" getUrl={requests.fetchTopMovies} />
+            <RowGrid title="Trending" getUrl={requests.fetchTrending} />
             <RowGrid title="Documentaries" getUrl={requests.fetchDocumentaries} />
-            <RowGrid title="Top Movies" getUrl={requests.fetchTopMovies} />
-            <RowGrid title="Documentaries" getUrl={requests.fetchDocumentaries} />
-            <RowGrid title="Top Movies" getUrl={requests.fetchTopMovies} />
-            <RowGrid title="Documentaries" getUrl={requests.fetchDocumentaries} />
+            <RowGrid title="Action" getUrl={requests.fetchActionMovies} />
+            <RowGrid title="Comedie" getUrl={requests.fetchComedieMovies} />
+            <RowGrid title="Horror Movies" getUrl={requests.fetchHorrorMovies} />
+            <RowGrid title="Romance" getUrl={requests.fetchRomanceMovies} />
         </main>
     )
 }
