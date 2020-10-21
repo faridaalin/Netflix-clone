@@ -6,12 +6,10 @@ import { StyledHeroBanner } from './styles/StyledHeroBanner.style'
 
 
 function Herobanner({ item }) {
-    const imageUrl = item && item.backdrop_path;
-
     return (
         <>
             {item &&
-                <StyledHeroBanner className="herobanner" imageUrl={imageUrl ? `${IMAGE_BASE_URL}original${imageUrl}` : noImageHero}>
+                <StyledHeroBanner className="herobanner" imageUrl={item && item.backdrop_path ? `${IMAGE_BASE_URL}${item.backdrop_path}` : noImageHero}>
                     <div className="hero-img">
                         <div className="hero-content">
                             <h2>{item.name ? item.name : item.title}</h2>
