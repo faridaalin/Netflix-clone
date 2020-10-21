@@ -23,11 +23,13 @@ export const StyledRowGrid = styled.section`
     max-width: 200px;
     margin-right: 10px;
     transition: transform 450ms;
+    opacity: 0.7;
 
     :hover,
     :focus,
     :active {
       transform: scale(1.09);
+      opacity: 1;
       z-index: 100;
     }
   }
@@ -35,10 +37,14 @@ export const StyledRowGrid = styled.section`
   .row__img.row_img--large {
     max-height: 250px;
     max-width: 100%;
-  }
+    opacity: 0.7;
 
-  .row__img.row_img--large::hover {
-    max-height: 250px;
-    transform: scale(1.1);
+    :hover,
+    :focus,
+    :active {
+      max-height: 250px;
+      transform: scale(1.1);
+      opacity: 1;
+    }
   }
 `;

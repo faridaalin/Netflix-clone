@@ -13,7 +13,10 @@ export const useHomeFetch = (URL) => {
       setContent((prevState) => ({ ...prevState, loading: true }));
 
       try {
+        const movies = [];
         const response = await axios.get(URL);
+        const result = response.data.results;
+        movies.push(result);
         setContent((prevState) => ({
           ...prevState,
           loading: false,
@@ -31,6 +34,5 @@ export const useHomeFetch = (URL) => {
 
     fetchData();
   }, [URL]);
-
   return content;
 };
