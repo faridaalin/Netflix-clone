@@ -10,7 +10,6 @@ function Home(props) {
     const content = useHomeFetch(requests.fetchNetflixOriginals)
 
     const heroContent = content.movies[Math.floor(Math.random() * content.movies.length)];
-    console.log(heroContent)
 
     return (
         <main>
