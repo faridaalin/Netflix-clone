@@ -4,6 +4,7 @@ const CardGrid = styled.section`
   overflow-y: hidden;
   overflow-x: auto;
   width: 95vw;
+  padding: 20px 0;
   /* Hide scrollbar for IE, Edge and Firefox */
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */

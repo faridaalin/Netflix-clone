@@ -24,11 +24,8 @@ export const StyledHeroBanner = styled.section`
     grid-area: 1 / 1 / 2 / 2;
     font-weight: 200;
     padding-top: 16px;
-
-    @media ${({ theme }) => theme.mediaQueries.sm} {
-      width: calc(100% - 45vw);
-      margin-right: auto;
-    }
+    max-width: 50ch;
+    margin-right: auto;
 
     h2 {
       font-size: calc(2rem + 0.8vw);
@@ -44,15 +41,16 @@ export const StyledHeroBanner = styled.section`
       font-size: 16px;
       color: ${({ theme }) => theme.colors.white};
       border: none;
-      border-radius: 3px;
-      padding: 0.8rem calc(1rem + 1vw);
-      background: rgb(46 45 45 / 0.7);
+      border-radius: 0.2vw;
+      padding: 0.6rem 2rem;
+      background: rgb(51 51 51 / 0.5);
       margin-right: 16px;
       ${({ theme }) => theme.mixins.flexHorizontal};
 
       :hover {
         background: ${({ theme }) => theme.colors.white};
         color: ${({ theme }) => theme.colors.bgBlack};
+        transition: all 0.2s;
       }
     }
 

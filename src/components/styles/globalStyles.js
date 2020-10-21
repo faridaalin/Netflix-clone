@@ -21,8 +21,6 @@ const GlobalStyle = createGlobalStyle`
     }
 
     img {
-        height: 100%;
-        min-width: 100%;
         width: 100%;
     }
 `;

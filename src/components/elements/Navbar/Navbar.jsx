@@ -37,7 +37,7 @@ function Navbar({ setDimentions, showMenu, setShowMenu }) {
         <NavHeader showMenu={showMenu} ref={dropdown}>
             <nav className="nav">
                 <div className="inner">
-                    <NavLink className="logo" to="/">CLONE</NavLink>
+                    <NavLink className="nav__logo" to="/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Logo_Netflix.png/800px-Logo_Netflix.png" alt="Netflix logo" /></NavLink>
                     <button className="mobile-nav" onClick={toggleMenu}>
                         <FontAwesome className="fa fa-bars" name="bars" />
                     </button>

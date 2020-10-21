@@ -9,8 +9,6 @@ export const NavHeader = styled.header`
   width: 100%;
 
   .nav {
-    /* position: relative; */
-
     @media ${({ theme }) => theme.mediaQueries.md} {
       display: flex;
       align-items: center;
@@ -29,8 +27,9 @@ export const NavHeader = styled.header`
     }
   }
 
-  .logo {
-    color: ${({ theme }) => theme.colors.white};
+  .nav__logo {
+    width: 80px;
+    object-fit: cover;
   }
 
   .mobile-nav {
@@ -84,8 +83,12 @@ export const NavHeader = styled.header`
   .nav-item {
     color: ${({ theme }) => theme.colors.white};
     filter: ${({ theme }) => theme.brighteness};
-    font-weight: 200;
+    font-weight: 400;
     text-transform: uppercase;
+
+    :hover {
+      filter: unset;
+    }
 
     @media ${({ theme }) => theme.mediaQueries.md} {
       margin: 0 1rem;

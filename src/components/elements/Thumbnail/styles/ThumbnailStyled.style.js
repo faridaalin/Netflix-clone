@@ -5,13 +5,12 @@ export const ThumbnailStyled = styled.div`
   width: 150px;
   padding-right: 8px;
   transform: scale(1);
-  transition: transform 0.2s ease-in-out;
+  transition: transform 450ms;
 
   :hover,
   :focus,
   :active {
-    transform: scale(1.2);
+    transform: scale(1.08);
     z-index: 100;
-    /* padding-left: 8px; */
   }
 `;
