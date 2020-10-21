@@ -14,8 +14,6 @@ function Home(props) {
     return (
         <main>
             <Herobanner item={heroContent} />
-
-
             <RowGrid title="NETFLIX ORIGINALS" islargeImg alreadyFetched getUrl={requests.fetchNetflixOriginals} />
             <RowGrid title="Top Movies" getUrl={requests.fetchTopMovies} />
             <RowGrid title="Trending" getUrl={requests.fetchTrending} />
