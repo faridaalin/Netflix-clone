@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "../../axios_baseurl";
 
 export const useHomeFetch = (URL, title) => {
+  const sessionKey = `${title}`.toLowerCase().replace(/\s/g, "_");
+
   const [content, setContent] = useState({
     loading: false,
     movies: [],
@@ -9,6 +11,8 @@ export const useHomeFetch = (URL, title) => {
   });
 
   useEffect(() => {
+    const sessionKey = `${title}`.toLowerCase().replace(/\s/g, "_");
+
     const fetchData = async () => {
       setContent((prevState) => ({ ...prevState, loading: true }));
 
@@ -29,9 +33,7 @@ export const useHomeFetch = (URL, title) => {
         console.log(e);
       }
     };
-
-    const keyFromStorage = `${title}`.toLowerCase().replace(/\s/g, "_");
-    const fromStorage = JSON.parse(sessionStorage.getItem(keyFromStorage));
+    const fromStorage = JSON.parse(sessionStorage.getItem(sessionKey));
 
     if (fromStorage) {
       setContent(fromStorage);
@@ -41,9 +43,8 @@ export const useHomeFetch = (URL, title) => {
   }, [URL, title]);
 
   useEffect(() => {
-    const key = `${title}`.toLowerCase().replace(/\s/g, "_");
-    sessionStorage.setItem(`${key}`, JSON.stringify(content));
-  }, [title, content]);
+    sessionStorage.setItem(sessionKey, JSON.stringify(content));
+  }, [title, content, sessionKey]);
 
   return content;
 };
