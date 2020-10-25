@@ -10,19 +10,18 @@ import { useHomeFetch } from '../../hooks/useHomeFetch';
 
 
 function RowGrid({ islargeImg, title, search, getUrl }) {
-    const [activeModal, setActiveModal] = useState(null);
-    const [close, setClose] = useState(true);
     const [movieDetails, setMovieDetails] = useState(null);
-    const content = useHomeFetch(getUrl)
-    const handleMovieDetail = (movie) => (e) => {
-        setActiveModal(null)
-        if (movie) {
-            setMovieDetails(movie)
-            setActiveModal(parseInt(movie.id))
-            setClose(!close)
+    const content = useHomeFetch(getUrl, title)
 
-        }
+    const handleMovieDetail = (movie) => (e) => {
+        setMovieDetails(movie)
+        console.dir(movie)
     };
+
+
+
+
+
     return (
 
         <StyledRowGrid>
@@ -54,7 +53,7 @@ function RowGrid({ islargeImg, title, search, getUrl }) {
                     )
                         : <p>Unable to get data</p>
             }
-            {!movieDetails ? null : <Herobanner item={movieDetails} activeModal={activeModal} close={close} />}
+            {!movieDetails ? null : <Herobanner item={movieDetails} />}
 
 
 

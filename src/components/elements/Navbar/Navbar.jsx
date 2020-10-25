@@ -8,33 +8,33 @@ function Navbar({ setDimentions, showMenu, setShowMenu }) {
     const [show, setShow] = useState(false)
     const [addbgColor, setAddbgColor] = useState(false)
 
+    const getWindowWidth = () => {
+        if (window.innerWidth > 768) {
+            setShow(true)
+        } else {
+            setShow(false)
+        }
+    }
+    const getWindowScrollY = () => {
+        if (window.scrollY > 15) {
+            setAddbgColor(true)
+        } else {
+            setAddbgColor(false)
+
+        }
+    }
 
     useEffect(() => {
-        window.addEventListener("resize", () => {
-            if (window.innerWidth > 768) {
-                setShow(true)
-            } else {
-                setShow(false)
-            }
-        });
+        window.addEventListener("resize", getWindowWidth);
 
-        return () => {
-            window.removeEventListener("resize")
-        }
+        return () => window.removeEventListener("resize", getWindowWidth)
+
     }, [])
     useEffect(() => {
-        window.addEventListener("scroll", () => {
-            if (window.scrollY > 15) {
-                setAddbgColor(true)
-            } else {
-                setAddbgColor(false)
+        window.addEventListener("scroll", getWindowScrollY);
 
-            }
-        });
+        return () => window.removeEventListener("scroll", getWindowScrollY)
 
-        return () => {
-            window.removeEventListener("scroll")
-        }
     }, [])
 
 

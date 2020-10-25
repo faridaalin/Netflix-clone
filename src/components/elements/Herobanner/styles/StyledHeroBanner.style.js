@@ -1,30 +1,8 @@
-import styled, { css } from "styled-components/macro";
-
-const ModalDetailStyles = css`
-  max-height: 30vw;
-  margin-left: 0;
-  margin-right: 0;
-  transition: height 0.2s ease-in;
-`;
-
-const hide = css`
-  max-height: 0;
-  margin-left: 0;
-  margin-right: 0;
-  overflow: hidden;
-  padding: 0;
-  transition: height 0.2s ease-in;
-`;
-
-const showSmallModal = ({ activeModal }) => {
-  if (activeModal) {
-    return ModalDetailStyles;
-  }
-  return hide;
-};
+import styled from "styled-components/macro";
 
 export const StyledHeroBanner = styled.section`
   position: relative;
+  height: 350px;
   max-height: calc(400px + 10vw);
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
@@ -35,8 +13,6 @@ export const StyledHeroBanner = styled.section`
   background-repeat: no-repeat;
   ${({ theme }) => theme.mixins.flexCenter};
   padding: 60px calc(16px + 1vw) 0;
-
-  ${showSmallModal};
 
   .herobanner__fade {
     position: absolute;
