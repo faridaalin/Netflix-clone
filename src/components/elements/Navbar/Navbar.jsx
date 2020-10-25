@@ -19,7 +19,7 @@ function Navbar({ setDimentions, showMenu, setShowMenu }) {
         });
 
         return () => {
-            window.addEventListener("resize")
+            window.removeEventListener("resize")
         }
     }, [])
     useEffect(() => {
@@ -33,7 +33,7 @@ function Navbar({ setDimentions, showMenu, setShowMenu }) {
         });
 
         return () => {
-            window.addEventListener("scroll")
+            window.removeEventListener("scroll")
         }
     }, [])
 

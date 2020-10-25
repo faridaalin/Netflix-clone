@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Button from '../Button/Button'
 import noImageHero from "../../../images/noimagePoster.png";
 import { IMAGE_BASE_URL } from "../../../config";
@@ -6,13 +6,13 @@ import { StyledHeroBanner } from './styles/StyledHeroBanner.style'
 
 
 
-function Herobanner({ showDetail, item }) {
-    const customHeroHeight = !showDetail ? false : true;
+function Herobanner({ item, activeModal }) {
+
 
     return (
         <>
             {item &&
-                <StyledHeroBanner className={`herobanner`} customHeroHeight={customHeroHeight} imageUrl={item && item.backdrop_path ? `${IMAGE_BASE_URL}${item.backdrop_path}` : noImageHero}>
+                <StyledHeroBanner className={`herobanner`} activeModal={activeModal === item.id} imageUrl={item && item.backdrop_path ? `${IMAGE_BASE_URL}${item.backdrop_path}` : noImageHero}>
                     <div className="hero-content">
                         <h2>{item.name ? item.name : item.title}</h2>
                         <div className="buttons">
