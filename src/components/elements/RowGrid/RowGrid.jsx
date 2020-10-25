@@ -1,21 +1,23 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import SubHeader from '../Header/SubHeader'
-import { StyledRowGrid } from './StyledRowGrid.style'
+import Herobanner from '../Herobanner/Herobanner'
+import { StyledRowGrid } from './styles/StyledRowGrid.style'
 import { IMAGE_BASE_URL } from "../../../config";
 import noThumbImage from "../../../images/noimage.png";
 import noHeroImage from "../../../images/noimagePoster.png";
-import { useHomeFetch } from '../../hooks/useHomeFetch'
-import { movieKey } from '../../../config'
+import { useHomeFetch } from '../../hooks/useHomeFetch';
+// import { movieKey } from '../../../config'
 
 
 function RowGrid({ islargeImg, title, search, getUrl }) {
-    const [storage] = JSON.parse(localStorage.getItem(movieKey)) || [];
-    console.log("storage:", storage)
+    const [movieDetails, setMovieDetails] = useState(null);
+    const [showDetail, setShowDetail] = useState(false);
     const content = useHomeFetch(getUrl)
-    // useEffect(() => {
-    //     console.log("INSIDE USEEFFEKT storage:", storage)
-    //     sessionStorage.setItem(movieKey, JSON.stringify(storage))
-    // }, [content, storage])
+
+    const handleMovieDetail = (movie) => (e) => {
+        setMovieDetails(movie)
+        setShowDetail(!showDetail)
+    };
 
     return (
 
@@ -32,6 +34,7 @@ function RowGrid({ islargeImg, title, search, getUrl }) {
                                 <img
                                     key={movie.id}
                                     className={`row__img ${islargeImg && "row_img--large"}`}
+                                    onClick={handleMovieDetail(movie)}
 
                                     src={islargeImg && movie.poster_path ? `${IMAGE_BASE_URL}${movie.poster_path}`
                                         : islargeImg && !movie.poster_path ? noThumbImage
@@ -40,12 +43,18 @@ function RowGrid({ islargeImg, title, search, getUrl }) {
 
                                     alt={movie.name} />
 
+
                             ))}
                         </div>
 
                     )
                         : <p>Unable to get data</p>
             }
+
+            {movieDetails ? <Herobanner showDetail item={movieDetails} /> : null}
+
+
+
 
         </StyledRowGrid>
     )

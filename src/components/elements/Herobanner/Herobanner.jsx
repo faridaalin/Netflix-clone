@@ -1,20 +1,23 @@
 import React from 'react'
-import FontAwesome from 'react-fontawesome';
+import Button from '../Button/Button'
 import noImageHero from "../../../images/noimagePoster.png";
 import { IMAGE_BASE_URL } from "../../../config";
 import { StyledHeroBanner } from './styles/StyledHeroBanner.style'
 
 
-function Herobanner({ item }) {
+
+function Herobanner({ showDetail, item }) {
+    const customHeroHeight = !showDetail ? false : true;
+
     return (
         <>
             {item &&
-                <StyledHeroBanner className="herobanner" imageUrl={item && item.backdrop_path ? `${IMAGE_BASE_URL}${item.backdrop_path}` : noImageHero}>
+                <StyledHeroBanner className={`herobanner`} customHeroHeight={customHeroHeight} imageUrl={item && item.backdrop_path ? `${IMAGE_BASE_URL}${item.backdrop_path}` : noImageHero}>
                     <div className="hero-content">
                         <h2>{item.name ? item.name : item.title}</h2>
                         <div className="buttons">
-                            <button> <FontAwesome className="fas fa-play btn-icon" name="search" /> Play</button>
-                            <button><FontAwesome className="fas fa-plus btn-icon" name="search" /> My list</button>
+                            <Button fontAwesoneClass={"fas fa-play btn-icon"} name="play" >Play</Button>
+                            <Button fontAwesoneClass={"fas fa-plus btn-icon"} name="plus" >My list</Button>
                         </div>
                         <p>{item.overview}</p>
                     </div>

@@ -24,6 +24,7 @@ export const StyledRowGrid = styled.section`
     margin-right: 10px;
     transition: transform 450ms;
     opacity: 0.7;
+    cursor: pointer;
 
     :hover,
     :focus,

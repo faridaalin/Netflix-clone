@@ -12,7 +12,6 @@ export const NavHeader = styled.header`
   background-color: ${({ addbgColor }) =>
     addbgColor ? "#111" : "transparent"};
   transition: all 0.2s ease-in-out;
-  ${({ addbgColor }) => console.log(addbgColor)};
 
   .nav {
     width: 100%;
